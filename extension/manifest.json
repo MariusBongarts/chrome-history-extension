@@ -3,11 +3,8 @@
   "description": "Chrome extension that accesses the chrome history API to read the browser history and display it in our own personalized React dashboard",
   "version": "1.0.0",
   "manifest_version": 3,
-  "chrome_url_overrides": {
-    "newtab": "./index.html"
-  },
   "action": {
-    "default_title": "History Dashboard",
+    "default_title": "Chrome History Dashboard",
     "default_popup": "./index.html"
   },
   "permissions": ["history"]
