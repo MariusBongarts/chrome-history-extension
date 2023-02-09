@@ -2,6 +2,8 @@ import React from "react";
 import { HistoryItem } from "./HistoryItem";
 import styled from "styled-components";
 
+const MemoizedHistoryItem = React.memo(HistoryItem);
+
 const StyledList = styled.ul`
   list-style: none;
   padding: 0;
@@ -16,7 +18,7 @@ export const History: React.FC<HistoryProps> = ({ items }) => {
   return (
     <StyledList>
       {items.map((item) => (
-        <HistoryItem key={item.id} item={item} />
+        <MemoizedHistoryItem key={item.id} item={item} />
       ))}
     </StyledList>
   );

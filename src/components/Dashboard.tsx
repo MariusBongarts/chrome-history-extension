@@ -1,18 +1,22 @@
 import React from "react";
+import styled from "styled-components";
 import { useChromeHistorySearch } from "../hooks/useChromeHistorySearch";
 import { History } from "./History";
 
 interface DashboardProps {}
 
-const query = { text: "", maxResults: 100 };
+const StyledDashboard = styled.div`
+  padding: 20px 0;
+`;
+
+const query: chrome.history.HistoryQuery = { text: "", maxResults: 20 };
 
 export const Dashboard: React.FC<DashboardProps> = () => {
   const mostRecentItems = useChromeHistorySearch(query);
 
   return (
-    <div>
-      <h1>Chrome History Dashboard 📊</h1>
+    <StyledDashboard>
       <History items={mostRecentItems} />
-    </div>
+    </StyledDashboard>
   );
 };
