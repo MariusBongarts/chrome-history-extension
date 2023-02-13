@@ -11,7 +11,7 @@ export const useChromeHistorySearch = (
     chrome.history
       .search(query)
       .then((historyItems) => setHistoryItems(historyItems))
-      .catch((error) => console.error);
+      .catch(console.error);
   }, [query]);
 
   return historyItems;

@@ -8,8 +8,21 @@ import { mockHistoryItems } from "../mocks";
 const ChromeAMockHistoryMock: Partial<typeof chrome.history> = {
   search: (query: chrome.history.HistoryQuery) => {
     return new Promise((res) => {
+      const applyTextFilter = (item: chrome.history.HistoryItem) => {
+        return (
+          !query.text ||
+          item.title?.toLowerCase().includes(query.text.toLowerCase()) ||
+          item.url?.toLowerCase().includes(query.text.toLowerCase())
+        );
+      };
+      const filteredItems = mockHistoryItems.filter(applyTextFilter);
       res(
-        mockHistoryItems.slice(0, query.maxResults ?? mockHistoryItems.length)
+        filteredItems.slice(
+          0,
+          query.maxResults && query.maxResults < filteredItems.length
+            ? query.maxResults
+            : filteredItems.length
+        )
       );
     });
   },

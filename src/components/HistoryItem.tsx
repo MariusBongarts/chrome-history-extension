@@ -37,7 +37,6 @@ export const HistoryItem: React.FC<HistoryItemProps> = ({ item }) => {
           {truncateString(url, 30)}
         </StyledItemLink>
       </StyledInfo>
-      {/* <LogoBadge>{item.visitCount}</LogoBadge> */}
       <StyledTime title={lastVisitDate.toTimeString()}>{time}</StyledTime>
     </StyledHistoryItem>
   );

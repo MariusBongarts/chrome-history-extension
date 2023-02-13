@@ -1,14 +1,8 @@
 import React from "react";
 import { HistoryItem } from "./HistoryItem";
-import styled from "styled-components";
+import { StyledList } from "./History.styled";
 
 const MemoizedHistoryItem = React.memo(HistoryItem);
-
-const StyledList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-`;
 
 interface HistoryProps {
   items: chrome.history.HistoryItem[];

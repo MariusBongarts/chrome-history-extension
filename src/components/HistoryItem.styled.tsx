@@ -8,7 +8,6 @@ export const StyledHistoryItem = styled.li`
   padding: 4px 8px;
   border-radius: 4px;
   cursor: default;
-
   &:hover {
     background: #fffbef;
   }
@@ -36,19 +35,4 @@ export const StyledTitle = styled.span`
 
 export const StyledTime = styled.span`
   color: var(--light-grey);
-`;
-
-export const LogoBadge = styled.i`
-  display: block;
-  min-width: 24px;
-  height: 24px;
-  top: 6px;
-  right: -6px;
-  border-radius: 100%;
-  color: var(--badge-color);
-  background-color: var(--badge-bg-color);
-  font-size: 12px;
-  line-height: 2;
-  text-align: center;
-  padding: 2px;
 `;
